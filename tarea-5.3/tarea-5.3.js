@@ -1,9 +1,13 @@
 const $botonDeTiempo = document.querySelector('#calcular-tiempo');
 
 $botonDeTiempo.onclick = function(){
-    const totalSegundos = document.querySelectorAll('segundos-video').value;
+    const $segundosVideo = Number(document.querySelector('#segundos-video').value);
+    const $minutosVideo = Number(document.querySelector('#minutos-video').value);
+    const $horasVideo = Number(document.querySelector('#horas-video').value);
+    
+    
+    console.log($segundosVideo, $minutosVideo, $horasVideo)
 
-    console.log(totalSegundos);
     return false;
 
 }
