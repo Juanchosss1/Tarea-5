@@ -1,12 +1,58 @@
+
 const $botonDeTiempo = document.querySelector('#calcular-tiempo');
 
 $botonDeTiempo.onclick = function(){
-    const $segundosVideo = Number(document.querySelector('#segundos-video').value);
-    const $minutosVideo = Number(document.querySelector('#minutos-video').value);
-    const $horasVideo = Number(document.querySelector('#horas-video').value);
+    const $segundosVideo = document.querySelectorAll('.segundos');
+    const $minutosVideo = document.querySelectorAll('.minutos');
+    const $horasVideo = document.querySelectorAll('.horas');
+    
+    const segundosArr = Array.from($segundosVideo);
+    const minutosArr = Array.from($minutosVideo);
+    const horasArr = Array.from($horasVideo);
+
     
     
-    console.log($segundosVideo, $minutosVideo, $horasVideo)
+    const minutosEnHora = 60;
+    let totalSegundos = 0;
+    let totalMinutos = 0;
+    let totalHoras = 0;
+
+
+    for (let i = 0; i > segundosArr.length; i++){
+        totalSegundos = totalSegundos + Number(segundosArr[i].value);
+        
+    }
+    console.log(segundosArr[1].value);
+    
+    
+    for (let i = 0; i > minutosArr.length; i++){
+        totalMinutos += Number(minutosArr[i].value);
+    }
+
+    while (totalSegundos >= minutosEnHora){
+        totalMinutos ++;
+        totalSegundos = totalSegundos - minutosEnHora; 
+    }
+
+    while (totalMinutos >= minutosEnHora){
+        totalHoras ++;
+        totalMinutos = totalMinutos - minutosEnHora; 
+    }
+
+    for (let i = 0; i > horasArr.length; i++){
+        totalMinutos += Number(horasArr[i].value);
+    }
+    
+    
+    console.log(totalHoras)
+    console.log(totalMinutos)
+    console.log(totalSegundos)
+
+    
+
+    
+    
+    document.querySelector('#total-videos').innerText = `El tiempo total de videos es de ${totalHoras} : ${totalMinutos} : ${totalSegundos}`
 
     return false;
 
