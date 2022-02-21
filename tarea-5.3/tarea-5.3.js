@@ -9,35 +9,36 @@ $botonDeTiempo.onclick = function(){
     const segundosArr = Array.from($segundosVideo);
     const minutosArr = Array.from($minutosVideo);
     const horasArr = Array.from($horasVideo);
-
-    
-    
+ 
     const minutosEnHora = 60;
     let totalSegundos = 0;
     let totalMinutos = 0;
     let totalHoras = 0;
 
+    console.log(segundosArr[0,1].value);
 
+    console.log(segundosArr)
     for (let i = 0; i > segundosArr.length; i++){
         totalSegundos = totalSegundos + Number(segundosArr[i].value);
         
     }
-    console.log(segundosArr[1].value);
     
     
-    for (let i = 0; i > minutosArr.length; i++){
-        totalMinutos += Number(minutosArr[i].value);
-    }
-
     while (totalSegundos >= minutosEnHora){
         totalMinutos ++;
         totalSegundos = totalSegundos - minutosEnHora; 
     }
+    
 
+    for (let i = 0; i > minutosArr.length; i++){
+        totalMinutos += Number(minutosArr[i].value);
+    }
+ 
     while (totalMinutos >= minutosEnHora){
         totalHoras ++;
         totalMinutos = totalMinutos - minutosEnHora; 
     }
+
 
     for (let i = 0; i > horasArr.length; i++){
         totalMinutos += Number(horasArr[i].value);
