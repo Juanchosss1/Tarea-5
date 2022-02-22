@@ -15,10 +15,9 @@ $botonDeTiempo.onclick = function(){
     let totalMinutos = 0;
     let totalHoras = 0;
 
-    console.log(segundosArr[0,1].value);
-
-    console.log(segundosArr)
-    for (let i = 0; i > segundosArr.length; i++){
+    
+  
+    for (let i = 0; i < segundosArr.length; i++){
         totalSegundos = totalSegundos + Number(segundosArr[i].value);
         
     }
@@ -30,7 +29,7 @@ $botonDeTiempo.onclick = function(){
     }
     
 
-    for (let i = 0; i > minutosArr.length; i++){
+    for (let i = 0; i < minutosArr.length; i++){
         totalMinutos += Number(minutosArr[i].value);
     }
  
@@ -40,8 +39,8 @@ $botonDeTiempo.onclick = function(){
     }
 
 
-    for (let i = 0; i > horasArr.length; i++){
-        totalMinutos += Number(horasArr[i].value);
+    for (let i = 0; i < horasArr.length; i++){
+        totalHoras += Number(horasArr[i].value);
     }
     
     
